@@ -1,0 +1,2 @@
+ffxivapp-sample-plugin
+======================
