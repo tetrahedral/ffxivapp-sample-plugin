@@ -1,4 +1,4 @@
-﻿// FFXIVAPP.Plugin.Sample
+﻿// Sample.Plugin
 // AboutView.xaml.cs
 
 namespace Sample.Plugin.Views

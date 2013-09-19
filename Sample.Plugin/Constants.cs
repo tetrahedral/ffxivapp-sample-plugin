@@ -1,4 +1,4 @@
-﻿// FFXIVAPP.Plugin.Sample
+﻿// Sample.Plugin
 // Constants.cs
 
 #region Usings

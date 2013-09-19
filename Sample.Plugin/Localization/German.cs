@@ -1,4 +1,4 @@
-﻿// FFXIVAPP.Plugin.Sample
+﻿// Sample.Plugin
 // German.cs
 
 #region Usings

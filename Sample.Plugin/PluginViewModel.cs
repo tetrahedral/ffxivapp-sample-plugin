@@ -1,4 +1,4 @@
-﻿// FFXIVAPP.Plugin.Sample
+﻿// Sample.Plugin
 // PluginViewModel.cs
 
 #region Usings
@@ -28,8 +28,8 @@ namespace Sample.Plugin
         #region Property Bindings
 
         private static PluginViewModel _instance;
-        private Dictionary<string, string> _locale;
         private bool _enableHelpLabels;
+        private Dictionary<string, string> _locale;
 
         public static PluginViewModel Instance
         {

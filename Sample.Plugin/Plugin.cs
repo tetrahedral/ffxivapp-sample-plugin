@@ -1,4 +1,4 @@
-﻿// FFXIVAPP.Plugin.Sample
+﻿// Sample.Plugin
 // Plugin.cs
 
 #region Usings
@@ -154,11 +154,16 @@ namespace Sample.Plugin
                     Raw = (string) entry[5],
                     TimeStamp = (DateTime) entry[6]
                 };
-                LogPublisher.Process(chatEntry);
+                Func<bool> publish = delegate
+                {
+                    DispatcherHelper.Invoke(() => LogPublisher.Process(chatEntry));
+                    return true;
+                };
+                publish.BeginInvoke(null, null);
             }
             catch (Exception ex)
             {
-                Logging.Log(LogManager.GetCurrentClassLogger(), "", ex);
+                //Logging.Log(LogManager.GetCurrentClassLogger(), "", ex);
                 Notice = ex.Message;
             }
             success = true;
@@ -193,10 +198,10 @@ namespace Sample.Plugin
                     Constants.GameLanguage = data as string;
                     break;
                 case ConstantsType.EnableNLog:
-                    Constants.EnableNLog = data is bool && (bool)data;
+                    Constants.EnableNLog = data is bool && (bool) data;
                     break;
                 case ConstantsType.EnableHelpLabels:
-                    PluginViewModel.Instance.EnableHelpLabels = Constants.EnableHelpLabels = data is bool && (bool)data;
+                    PluginViewModel.Instance.EnableHelpLabels = Constants.EnableHelpLabels = data is bool && (bool) data;
                     break;
             }
         }

@@ -1,4 +1,4 @@
-﻿// FFXIVAPP.Plugin.Sample
+﻿// Sample.Plugin
 // ShellView.xaml.cs
 
 namespace Sample.Plugin
