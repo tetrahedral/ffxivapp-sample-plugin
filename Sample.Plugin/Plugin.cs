@@ -112,8 +112,15 @@ namespace Sample.Plugin
             Notice = "";
         }
 
-        public void Dispose()
+        public void Dispose(bool isUpdating = false)
         {
+            /*
+             * If the isUpdating is true it means the application will be force closing/killed.
+             * You wil have to choose what you want to do in this case.
+             * By default the settings class clears the settings object and recreates it; but if killed untimely it will not save.
+             * 
+             * Suggested use is to not save settings if updating. Other disposing events could happen based on your needs.
+             */
             Settings.Default.Save();
         }
 
